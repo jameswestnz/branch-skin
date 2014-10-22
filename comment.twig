@@ -6,7 +6,7 @@
 	        </div>
 	        <div class="col-xs-9 col-sm-10">
 	        	<h4>{% if comment.comment_author_url %}<a href="{{comment.comment_author_url}}">{% endif %}{{comment.author.name}}{% if comment.comment_author_url %}</a>{% endif %} said:</h4>
-	        	<p><small>on <time datetime="{{get_comment_date('c', comment.ID)}}"><a href="{{htmlspecialchars(get_comment_link(comment.ID))}}">{{sprintf(__('%1$s'), get_comment_date('', comment.ID),  get_comment_time())}}</a></time></small></p>
+	        	<p><small>on <time datetime="{{get_comment_date('c', comment.ID)}}"><a href="{{htmlspecialchars(get_comment_link(comment.ID))}}">{{sprintf(__('%1$s'), get_comment_date('', comment.ID),  get_comment_time(comment.ID))}}</a></time></small></p>
 	            <div class="comment-text">
 					{{comment.comment_content|wpautop}}
 	                
