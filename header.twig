@@ -15,7 +15,7 @@
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				{% for item in menu.items %}
+				{% for item in get_menu('primary').items %}
 				<li id="menu-item-{{item.ID}}" class="menu-item menu-item-type-{{item.type}} menu-item-object-{{item.object}} menu-item-{{item.ID}} {% if item.current %}active{% endif %}{% if item.get_children %} dropdown{% endif %}">
                     <a href="{{item.link}}" class="{% if item.get_children %}dropdown-toggle{% endif %}"{% if item.get_children %} data-toggle="dropdown"{% endif %}>{{item.title}}{% if item.get_children %} <span class="caret">{% endif %}</a>
                     
